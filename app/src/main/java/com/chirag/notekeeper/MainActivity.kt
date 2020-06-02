@@ -81,7 +81,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         notesLayoutManager = LinearLayoutManager(this)
         listItems.layoutManager = notesLayoutManager
 
-        courseLayoutManager = GridLayoutManager(this, 2)
+        courseLayoutManager =
+            GridLayoutManager(this, resources.getInteger(R.integer.course_grid_span))
 
         val notes: ArrayList<NoteInfo>? = DataManager.instance?.notes
         val courses: ArrayList<CourseInfo>? = DataManager.instance?.courses

@@ -20,8 +20,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+                <ImageView
+                    android:id="@+id/ivCourseImage"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/ic_slideshow"
+                    android:tint="@color/orange"
+                    app:layout_constraintEnd_toEndOf="@+id/text_course"
+                    app:layout_constraintStart_toStartOf="@+id/text_course"
+                    app:layout_constraintTop_toBottomOf="@+id/text_course" />
+
                 <TextView
                     android:id="@+id/text_course"
+                    style="@style/CourseTitle"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:gravity="center"
