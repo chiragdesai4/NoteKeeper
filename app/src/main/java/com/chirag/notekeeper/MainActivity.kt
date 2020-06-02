@@ -47,8 +47,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
         val navView: NavigationView = findViewById(R.id.nav_view)
         navView.setNavigationItemSelectedListener(this)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
 
         val toggle = ActionBarDrawerToggle(
             this,
@@ -57,21 +55,18 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.string.navigation_drawer_close
         )
 
-
         toggle.isDrawerIndicatorEnabled = true
         actionBar?.apply {
             setDisplayHomeAsUpEnabled(true)
             setHomeAsUpIndicator(R.drawable.ic_launcher_background)
         }
-        mBinding.drawerLayout.setDrawerListener(toggle)
+        mBinding.drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.nav_notes, R.id.nav_courses
             ), mBinding.drawerLayout
         )
-
-
 
         initializeDisplayContent()
     }

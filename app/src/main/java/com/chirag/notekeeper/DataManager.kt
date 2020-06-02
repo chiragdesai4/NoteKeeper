@@ -4,11 +4,6 @@ class DataManager private constructor() {
     private val mCourses: ArrayList<CourseInfo> =
         ArrayList()
     private val mNotes: ArrayList<NoteInfo> = ArrayList()
-    val currentUserName: String
-        get() = "Chirag Desai"
-
-    val currentUserEmail: String
-        get() = "desaichirag06@gmail.com"
 
     val notes: ArrayList<NoteInfo>
         get() = mNotes
@@ -17,13 +12,6 @@ class DataManager private constructor() {
         val note = NoteInfo(null, null, null)
         mNotes.add(note)
         return mNotes.size - 1
-    }
-
-    fun findNote(note: NoteInfo): Int {
-        for (index in mNotes.indices) {
-            if (note.equals(mNotes[index])) return index
-        }
-        return -1
     }
 
     fun removeNote(index: Int) {
@@ -40,21 +28,6 @@ class DataManager private constructor() {
         return null
     }
 
-    fun getNotes(course: CourseInfo): List<NoteInfo> {
-        val notes = ArrayList<NoteInfo>()
-        for (note in mNotes) {
-            if (course.equals(note.course)) notes.add(note)
-        }
-        return notes
-    }
-
-    fun getNoteCount(course: CourseInfo): Int {
-        var count = 0
-        for (note in mNotes) {
-            if (course.equals(note.course)) count++
-        }
-        return count
-    }
 
     //region Initialization code
     private fun initializeCourses() {
